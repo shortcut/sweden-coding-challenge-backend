@@ -15,7 +15,7 @@ Don't spend too much time on perfecting it, as long as you can discuss the choic
 ## Functional requirements
 
 - Service should let users register a new account and authenticate themselves.
-- Service should let authenticated users create shorted URLs.
+- Service should let authenticated users create shortened URLs.
 - Service should let any user use shortened URLs (e.g., follow redirects to original URLs).
 
 ## Technical requirements
@@ -48,7 +48,7 @@ During the review process we'll look at:
 - Good coding practices.
 - Consistent coding style and formatting
 - Names and naming conventions.
-- Good use of commentsi.
+- Good use of comments.
 - Lint warnings and code smells.
 
 ## The End
