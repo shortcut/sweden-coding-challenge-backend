@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  go:
+    restart: always
+    container_name: ${PROJECT_NAME}-go
+    ports:
+      - "${WEBSERVER_PORT}:${PROJECT_PORT:-8080}"
+    build:
+      context: ./go
+      dockerfile: Dockerfile
+      args:
+        USER_NAME: $USER_NAME
+        GROUP_NAME: $GROUP_NAME
+        USER_ID: $USER_ID
+        GROUP_ID: $GROUP_ID
+        DOMAIN_DIR: $DOMAIN_DIR
+    working_dir: $DOMAIN_DIR
+    volumes:
+      - ./src:$DOMAIN_DIR
+    command: >
+      sh -c "go mod download &&
+             go build -o ./main &&
+             ./main"
+  
+  db:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+      - '${POSTGRES_PORT}:5432'
+    volumes: 
+      - db:/var/lib/postgresql/data
+volumes:
+  db:
+    driver: local
