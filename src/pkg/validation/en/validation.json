@@ -1,0 +1,7 @@
+{
+    "required": "the ':attribute' field is required",
+    "alphanum": "the ':attribute' field should be alphanumeric",
+    "unique": "the ':attribute' value already has been taken",
+    "email" : "the ':attribute' is not valid email",
+    "min" : "the ':attribute' is should be more than ':value' characters !"
+}
