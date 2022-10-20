@@ -36,6 +36,10 @@ Please include README file to your project. Hopefully it will contain following 
 - Add details about trade-offs you have made
 - Add details about things and features you have skipped, or you would like to change if you have additional time for this project.
 
+## Handing over for review
+
+Please build the project in an open repository on GitHub and deliver the coding challenge via link to the repository.
+
 ## The Review
 
 During the review process we'll look at:
